@@ -2,4 +2,4 @@
 str = "Holberton School"
 times = 3
 print(str * times, end='' '\n')
-print(str[:10])
+print(str[:9])
