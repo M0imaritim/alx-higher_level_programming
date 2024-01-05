@@ -3,5 +3,5 @@ if __name__ == '__main__':
     import hidden_4
     names = sorted(dir(hidden_4[]))
     for name in names:
-        if name[0] != '__0':
+        if name[0] != '_':
             print(name)
