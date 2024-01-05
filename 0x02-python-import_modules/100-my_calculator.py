@@ -27,4 +27,3 @@ if __name__ == '__main__':
     elif operator == '/':
         result = div(a, b)
     print("{} {} {} = {}".format(argv[1], argv[2], argv[3], result))
-            
