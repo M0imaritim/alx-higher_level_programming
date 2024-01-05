@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 if __name__ == '__main__':
     import hidden_4
-    for i in dir(hidden_4[]):
-        if i[0] != "__":
-            print(i)
+    names = sorted(dir(hidden_4[]))
+    for name in names:
+        if name[0] != '__0':
+            print(name)
