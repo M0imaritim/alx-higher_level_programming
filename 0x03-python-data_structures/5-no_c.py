@@ -2,8 +2,8 @@
 def no_c(my_string):
     if my_string is None:
         return
-    new_str = list(my_string)
-    for i in new_str:
-        if i == 'c' and i == 'C':
-            new_str.remove(i)
-    return ''.join(new_str)
+    new_str = ''
+    for i in my_string:
+        if i != 'c' and i != 'C':
+            new_str += i
+    return new_str
