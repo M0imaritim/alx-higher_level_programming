@@ -21,16 +21,16 @@ class Square:
                 raise ValueError("size must be >= 0")
             self.__size = value
 
-        def area(self):
-            '''returns the area of the square'''
-            return self.__size ** 2
+    def area(self):
+        '''returns the area of the square'''
+        return self.__size ** 2
 
-        def my_print(self):
-            '''returns the area in form of #'''
-            if not self.__size:
+    def my_print(self):
+        '''returns the area in form of #'''
+        if not self.__size:
+            print()
+        else:
+            for i in range(self.__size):
+                for j in range(self.__size):
+                    print("#", end="")
                 print()
-            else:
-                for i in range(self.__size):
-                    for j in range(self.__size):
-                        print("#", end="")
-                    print()
