@@ -14,6 +14,7 @@ class Square:
         @size.setter
         def size(self, value):
             '''new assignment of values to an attribute'''
+
             if not isinstance(value, int):
                 raise TypeError("size must be an integer")
             if value < 0:
@@ -26,7 +27,7 @@ class Square:
 
         def my_print(self):
             '''returns the area in form of #'''
-            if self.__size <= 0:
+            if not self.__size:
                 print()
             else:
                 for i in range(self.__size):
