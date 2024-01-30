@@ -3,6 +3,7 @@
 This module contains a locked class
 """
 
+
 class LockedClass:
     """this is the defined locked class"""
 
