@@ -1,0 +1,66 @@
+A custom list class that inherits the attributes of the built-in list class.
+
+Args:
+    list: The built-in list class.
+
+Example:
+    >>> l = MyList([3, 1, 2])
+    >>> l.print_sorted()
+    [1, 2, 3]
+
+This class inherits all attributes and methods from the built-in list class.
+It also provides an additional method:
+
+print_sorted():
+    Prints the list in sorted order.
+
+Edge Cases:
+
+1. Empty list:
+    >>> l = MyList([])
+    >>> l.print_sorted()
+    []
+
+2. List with one element:
+    >>> l = MyList([5])
+    >>> l.print_sorted()
+    [5]
+
+3. List with multiple elements in descending order:
+    >>> l = MyList([5, 4, 3, 2, 1])
+    >>> l.print_sorted()
+    [1, 2, 3, 4, 5]
+
+4. List with multiple elements in ascending order:
+    >>> l = MyList([1, 2, 3, 4, 5])
+    >>> l.print_sorted()
+    [1, 2, 3, 4, 5]
+
+5. List with duplicate elements:
+    >>> l = MyList([3, 1, 2, 3, 2, 1])
+    >>> l.print_sorted()
+    [1, 1, 2, 2, 3, 3]
+
+6. List with mixed types (ints and strings):
+    >>> l = MyList([3, 'apple', 2, 'banana', 1])
+    >>> l.print_sorted()
+    [1, 2, 3, 'apple', 'banana']
+
+7. List with None elements:
+    >>> l = MyList([None, 3, 2, None, 1])
+    >>> l.print_sorted()
+    [None, None, 1, 2, 3]
+
+8. List with nested lists:
+    >>> l = MyList([[3], [1], [2]])
+    >>> l.print_sorted()
+    [[1], [2], [3]]
+
+9. List with objects of custom classes:
+    (Assuming a custom class `Custom` is defined elsewhere)
+    >>> obj1 = Custom()
+    >>> obj2 = Custom()
+    >>> obj3 = Custom()
+    >>> l = MyList([obj1, obj3, obj2])
+    >>> l.print_sorted()
+    [obj1, obj2, obj3]
