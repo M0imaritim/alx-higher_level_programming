@@ -1,0 +1,41 @@
+This is a class with two methods.
+
+ >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+- Testing integer_validator() method:
+
+1. Valid integer value:
+    Name: "Length", Value: 10
+    Expected outcome: No exceptions should be raised.
+
+2. Non-integer value:
+    Name: "Width", Value: 5.5
+    Expected outcome: TypeError should be raised with the message "Width must be an integer".
+
+3. Negative integer value:
+    Name: "Height", Value: -3
+    Expected outcome: ValueError should be raised with the message "Height must be greater than 0".
+
+4. Zero value:
+    Name: "Width", Value: 0
+    Expected outcome: ValueError should be raised with the message "Width must be greater than 0".
+
+5. String value:
+    Name: "Radius", Value: "abc"
+    Expected outcome: TypeError should be raised with the message "Radius must be an integer".
+
+6. None value:
+    Name: "Length", Value: None
+    Expected outcome: TypeError should be raised with the message "Length must be an integer".
+
+7. Large integer value:
+    Name: "Length", Value: 99999999999999999999999999999999
+    Expected outcome: No exceptions should be raised.
+
+8. Boundary case: Smallest positive integer value:
+    Name: "Width", Value: 1
+    Expected outcome: No exceptions should be raised.
+
+9. Boundary case: Largest positive integer value (within system limits):
+    Name: "Height", Value: 2147483647 (maximum value for a 32-bit signed integer)
+    Expected outcome: No exceptions should be raised.
