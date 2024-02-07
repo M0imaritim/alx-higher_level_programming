@@ -17,6 +17,6 @@ class Square(Rectangle):
         """returns the aquare of size"""
         return super().area()
 
-     def __str__(self):
-         """returns  printable string """
-         return "[Square] {}/{}".format(self.__size, self.__size)
+    def __str__(self):
+        """returns  printable string """
+        return "[Square] {}/{}".format(self.__size, self.__size)
