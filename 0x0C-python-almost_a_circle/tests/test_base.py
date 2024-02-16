@@ -13,6 +13,30 @@ class TestBase(unittest.TestCase):
         """method to be run before tests methods"""
         Base._Base__nb_objects = 0
 
+    def test_auto_assign_id(self):
+        """Test automatic assignment of IDs"""
+        obj1 = Base()
+        obj2 = Base()
+        obj3 = Base()
+        obj4 = Base()
+        self.assertNotEqual(obj1.id, obj2.id)
+        self.assertNotEqual(obj1.id, obj3.id)
+        self.assertNotEqual(obj1.id, obj4.id)
+        self.assertNotEqual(obj2.id, obj3.id)
+        self.assertNotEqual(obj2.id, obj4.id)
+        self.assertNotEqual(obj3.id, obj4.id)
+
+    def test_auto_increment_id(self):
+        """Test automatic increment of IDs"""
+        obj1 = Base()
+        obj2 = Base()
+        obj3 = Base()
+        obj4 = Base()
+
+        self.assertEqual(obj2.id, obj1.id + 1)
+        self.assertEqual(obj3.id, obj2.id + 1)
+        self.assertEqual(obj4.id, obj3.id + 1)
+
     def test_instantiation_with_id(self):
         """instantiation with provided id"""
         obj = Base(10)
