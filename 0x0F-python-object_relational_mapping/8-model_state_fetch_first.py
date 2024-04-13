@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""prints the first State object from the database hbtn_0e_6_usa"""
+"""
+prints the first State object from the database hbtn_0e_6_usa
+"""
 
 from sys import argv
 from model_state import Base, State
@@ -15,10 +17,10 @@ if __name__ == '__main__':
     session = Session()
 
     states = session.query(State).order_by(State.id).all()
-    if states:
+    if states is None:
+        print("Nothing")
+    else:
         for state in states:
             if states[0]:
                 print("{}: {}".format(state.id, state.name))
                 break
-    else:
-        print("Nothing")
