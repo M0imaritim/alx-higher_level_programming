@@ -4,7 +4,7 @@
     the body of the response
 """
 import sys
-import urllib.request
+from urllib import request, error
 
 url = sys.argv[1]
 try:
