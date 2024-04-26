@@ -3,17 +3,17 @@
 
 import sys
 import requests
+if __name__ =="__main__":
+    repo = sys.argv[1]
+    user = sys.argv[2]
 
-repo = sys.argv[1]
-user = sys.argv[2]
+    url = "https://api.github.com/repos/{}/{}/commits".format(user, repo)
 
-url = "https://api.github.com/repos/{}/{}/commits".format(user, repo)
+    r = requests.get(url)
 
-r = requests.get(url)
+    commits = r.json()
 
-commits = r.json()
-
-for commit in commits[:10]:
-    sha = commit['sha']
-    author = commit['commit']['author']['name']
-    print("{}: {}".format(sha, author))
+    for commit in commits[:10]:
+        sha = commit['sha']
+        author = commit['commit']['author']['name']
+        print("{}: {}".format(sha, author))
