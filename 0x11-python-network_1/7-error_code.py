@@ -12,3 +12,5 @@ if __name__ == "__main__":
     rc = r.status_code
     if rc > 400 or rc == 400:
         print("Error code: {}".format(rc))
+    else:
+        print(r.text)
