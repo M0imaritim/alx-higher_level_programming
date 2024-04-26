@@ -8,8 +8,9 @@ if __name__ =="__main__":
     user = sys.argv[2]
 
     url = "https://api.github.com/repos/{}/{}/commits".format(user, repo)
+    params = {'on_page': 10}
 
-    r = requests.get(url)
+    r = requests.get(url, params=params)
 
     commits = r.json()
 
