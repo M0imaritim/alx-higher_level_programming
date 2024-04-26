@@ -5,7 +5,7 @@ API to display your id"""
 import sys
 import requests
 
-if __name__ == ""__main__:
+if __name__ == "__main__":
     user = sys.argv[1]
     psswd = sys.argv[2]
     url = "https://api.github.com/user"
