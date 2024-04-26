@@ -11,7 +11,7 @@ if __name__ == "__main__":
     email = sys.argv[2]
 
     e_data = urllib.parse.urlencode({'Your email is': email})
-    e_data = e_data.encode('utf-8')
+    e_data = e_data.encode('ascii')
     with urllib.request.urlopen(url, data=e_data) as response:
         page = response.read().decode('utf-8')
     print(page)
