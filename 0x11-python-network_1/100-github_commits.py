@@ -3,7 +3,7 @@
 
 import sys
 import requests
-if __name__ =="__main__":
+if __name__ == "__main__":
     repo = sys.argv[1]
     user = sys.argv[2]
 
