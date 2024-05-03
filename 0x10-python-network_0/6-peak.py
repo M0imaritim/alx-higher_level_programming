@@ -3,11 +3,14 @@
 def find_peak(list_of_integers):
     """function initiation"""
     lt = list_of_integers
-    try:
-        for i in lt:
-            if (i - lt[i-1] >= 0) or (i - lt[i+1] >= 0):
-                return i
-            else:
-                return None
-    except IndexError:
+    n = len(lt)
+    mid = n // 2
+    if lt:
+        if (mid == 0 or lt[mid] >= lt[mid-1]) and (mid == n-1 or lt[mid] >=lt[mid+1]):
+            return lt[mid]
+        elif mid > 0 and lt[mid] < lt[mid-1]:
+            return find_peak(lt[:mid])
+        else:
+            return find_peak(lt[mid+1:])
+    else:
         return None
