@@ -2,7 +2,7 @@
 const dict = require('./101-data').dict;
 const nnew = {};
 
-Object.keys(dict).map(function (key, index) {
+Object.keys(dict).forEach(function (key, index) {  // Change .map() to .forEach()
   if (nnew[dict[key]] === undefined) {
     nnew[dict[key]] = [];
   }
