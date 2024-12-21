@@ -1,22 +1,27 @@
 #!/usr/bin/node
 class Rectangle {
   constructor (w, h) {
-    if (w > 0 && h > 0) {
+    if (w <= 0 || h <= 0) {
+      this.width = 0;
+      this.height = 0;
+    } else {
       this.width = w;
       this.height = h;
     }
   }
 
   print () {
-    for (let i = 0; i < this.height; i++) {
-      console.log('X'.repeat(this.width));
+    if (this.width === 0 || this.height === 0) {
+      console.log("");
+    } else {
+      for (let i = 0; i < this.height; i++) {
+        console.log('X'.repeat(this.width));
+      }
     }
   }
 
   rotate () {
-    const Y = this.width;
-    this.width = this.height;
-    this.height = Y;
+    [this.width, this.height] = [this.height, this.width];
   }
 
   double () {
