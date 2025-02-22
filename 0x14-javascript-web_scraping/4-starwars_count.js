@@ -1,22 +1,27 @@
-#!/usr/bin/node
 const request = require('request');
 
-const apiUrl = process.argv[2];
-const characterId = '18';
+const API_URL = "https://swapi-api.alx-tools.com/api/films/";
+const CHARACTER_ID = "/18/";
 
-request(apiUrl, (error, response, body) => {
-  if (error) {
-    console.log(error);
-  } else {
-    const films = JSON.parse(body).results;
-    let count = 0;
-
-    films.forEach(film => {
-      if (film.characters.includes(`https://swapi-api.alx-tools.com/ai/people/${characterId}/`)) {
-        count++;
-      }
+function countWedgeMovies() {
+    request(API_URL, { json: true }, (error, response, body) => {
+        if (error) {
+            console.error("Error fetching data:", error.message);
+            return;
+        }
+        
+        if (!body.results) {
+            console.error("Unexpected response format");
+            return;
+        }
+        
+        const count = body.results.filter(film => 
+            film.characters.some(charUrl => charUrl.includes(CHARACTER_ID))
+        ).length;
+        
+        console.log(count);
     });
+}
 
-    console.log(count);
-  }
-});
+countWedgeMovies();
+
